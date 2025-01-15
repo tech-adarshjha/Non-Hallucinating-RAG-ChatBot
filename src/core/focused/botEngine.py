@@ -109,8 +109,6 @@ class BotEngine:
             return "Sorry, I can't answer that."
 
 # Function to get or create a BotEngine instance
-
-
 @lru_cache(maxsize=1024)
 def get_bot_engine_instance(bot_id):
     return BotEngine(bot_id)

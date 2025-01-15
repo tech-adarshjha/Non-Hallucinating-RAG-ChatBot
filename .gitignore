@@ -4,3 +4,5 @@ __pycache__/
 .idea/
 models/
 dump/
+archive/*
+assets/kb_data/*
