@@ -81,7 +81,7 @@ class LoggerFactory:
 cwd = os.getcwd()
 name = "Humm.chat"
 log_file_name = f"{name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-Log_PATH = os.path.join(cwd, "dump/logs", log_file_name)
+Log_PATH = os.path.join(cwd, "logs", log_file_name)
 
 
 logger_factory = LoggerFactory(
