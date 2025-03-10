@@ -1,5 +1,5 @@
 import os
-
+import csv
 import faiss
 import nltk
 import numpy as np
@@ -46,9 +46,12 @@ class BotEngine:
 
         else:
             kb_files = getKbFiles(self.botId)
-            dataframeslist = [pd.read_csv(csvfile).dropna()
+            dataframeslist = [pd.read_csv(csvfile, encoding="utf-8", quotechar='"').dropna()
                               for csvfile in kb_files]
             df = pd.concat(dataframeslist, ignore_index=True)
+            # write df to json file
+            # df.to_json("./x.json", orient='records', lines=True)
+
             df['Clean_Question'] = df['Question'].apply(
                 lambda x: self.cleanup(x))
             df['Question_embeddings'] = list(
@@ -82,7 +85,7 @@ class BotEngine:
         self.classifier = SVC(kernel='linear')
         self.classifier.fit(trainx, trainy)
 
-    @lru_cache(maxsize=4096)
+    # @lru_cache(maxsize=4096)
     def ask(self, usr):
         try:
             cleaned_usr = self.cleanup(usr)
@@ -98,7 +101,7 @@ class BotEngine:
             D, I = self.vector_store.search(t_usr_array, top_k)
             threshold = D[0][0]
             logger.info("Threshold : {0}".format(threshold))
-            if threshold < 0.7:
+            if threshold > 0.7:
                 question_index = int(I[0][0])
                 return self.data['Answer'][question_index]
             else:
@@ -109,6 +112,8 @@ class BotEngine:
             return "Sorry, I can't answer that."
 
 # Function to get or create a BotEngine instance
+
+
 @lru_cache(maxsize=1024)
 def get_bot_engine_instance(bot_id):
     return BotEngine(bot_id)

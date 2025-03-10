@@ -8,6 +8,6 @@ from util.exception import BotNotFoundException
 def getKbFiles(id):
     # mock data for now
     if id == "candawills":
-        return [getFilePath(id, "greetings.csv"), getFilePath(id, "Expanded_Canandawills_FAQ.csv"), getFilePath(id, "Basic_Conversation_BotInfo_Canadawills.csv")]
+        return [getFilePath(id, "Canadawills.csv")]
     else:
         raise BotNotFoundException("Bot `{0}` is not registered.".format(id))

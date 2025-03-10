@@ -16,6 +16,10 @@ pandas = "2.2.3"
 scikit-learn = "1.5.2"
 fastapi = { version = "^0.115.2", extras = ["standard"] }
 pyarrow = "^17.0.0"
+inscriptis = "^2.5.3"
+beautifulsoup4 = "^4.13.3"
+openai = "^1.65.3"
+google-genai = "^1.4.0"
 
 [build-system]
 requires = ["poetry-core"]

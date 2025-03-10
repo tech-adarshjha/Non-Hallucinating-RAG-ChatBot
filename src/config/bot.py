@@ -7,10 +7,10 @@ BASE_KB_PATH = path.join(cwd, "assets/kb_data")
 MODEL_NAME = "tfidf"
 
 # mock bot, later implement
-MockBotId = "botid"
+MockBotId = "candawills"
 
 
-def getFilePath(botId, filename):
+def getFilePath(botId, filename=None):
     return path.join(BASE_KB_PATH, botId, "files", filename)
 
 
