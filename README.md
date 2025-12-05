@@ -1,5 +1,4 @@
-[`<img src="images/logo.png" width="300" alt="Logo">`
-](https://raw.githubusercontent.com/tech-adarshjha/Non-Hallucinating-RAG-ChatBot/refs/heads/main/SCR-20251205-naoe.png)
+<img src="https://raw.githubusercontent.com/tech-adarshjha/Non-Hallucinating-RAG-ChatBot/refs/heads/main/SCR-20251205-naoe.png" width="600" alt="Screenshot">
 
 A Simple MVP to demonstrate QnA thats free from hallucinations without using LLMs. This can serve as a base for more complex systems and would suffice need for most QnA Bot use case.
 
