@@ -11,7 +11,7 @@ HEADERS = {
 
 PROMPT_PREFIX = """Generate as many question answer pairs from the following text as possible.Generate question from every part of the text. The questions should cover the entire text. The answers should be professional. The text is from a website and the question answer will be used for frequently asked question section of the website. The questions should be from the perspective of site visitor and the answer from the perspective of the website owner. Return the questions and answers in json format. The text is as follows:\n\n"""
 
-API_KEY = "AIzaSyB4UDAr3O36su6ZERrPBpScHwl4-bOksdU"
+API_KEY = "YOUR_API_KEY_HERE"
 MODEL = "gemini-2.0-flash"
 
 
